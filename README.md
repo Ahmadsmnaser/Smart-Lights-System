@@ -1,6 +1,6 @@
 # Smart Lights System
 
-A full-stack IoT-style demo for managing simulated smart lighting devices.
+Smart Lights is a full-stack demo app with a Spring Boot backend that manages simulated light devices using SQL Server for device data, MongoDB for event history, and Quartz for scheduled toggling, paired with an Angular frontend that displays lights, history, and scheduling controls through REST APIs. 
 
 ## Tech Stack
 
