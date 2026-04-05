@@ -1,0 +1,55 @@
+<div class="page">
+
+    <h1>Schedule - {{deviceId}}</h1>
+
+    <div class="card">
+        <!-- interval based section (legacy) -->
+        <p>Current toggle interval:</p>
+        <h2>{{interval}} seconds</h2>
+        <label>New interval (seconds)</label>
+        <input type="number" [(ngModel)]="interval" class="full-width" placeholder="Enter seconds">
+        <button (click)="updateSchedule()" class="primary-btn">Update Interval</button>
+    </div>
+
+    <div class="card">
+        <!-- rule creation section -->
+        <h2>Add New Rule</h2>
+        <label>Start Time</label>
+        <input type="time" [(ngModel)]="startTime" (change)="onStartOrEndChange()" class="full-width">
+
+        <label>End Time</label>
+        <input type="time" [(ngModel)]="endTime" (change)="onStartOrEndChange()" class="full-width">
+
+        <label>Operation</label>
+        <div class="segmented">
+            <label class="segment"><input type="radio" name="op" [(ngModel)]="operation" value="ON"> ON</label>
+            <label class="segment"><input type="radio" name="op" [(ngModel)]="operation" value="OFF"> OFF</label>
+        </div>
+
+        <label>Generated RRule</label>
+        <textarea readonly rows="2" class="full-width">{{rrule}}</textarea>
+
+        <button (click)="saveRule()" class="primary-btn">Save Rule</button>
+    </div>
+
+    <hr>
+
+    <div class="card">
+        <h2>Existing Rules</h2>
+        <div *ngIf="existingRules.length === 0" class="muted">
+            <em>No rules defined</em>
+        </div>
+        <ul class="rule-list">
+            <li *ngFor="let r of existingRules" class="rule-item">
+                <div class="rule-info">
+                    <strong>{{r.startTime}} - {{r.endTime}}</strong> : {{r.operation}}
+                    <span class="rrule-text">rrule: {{r.rrule}}</span>
+                </div>
+                <button (click)="deleteRule(r.id)" class="danger-btn small">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <a routerLink="/devices" class="back-link">← Back</a>
+
+</div>

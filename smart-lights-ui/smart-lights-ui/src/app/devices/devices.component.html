@@ -1,0 +1,34 @@
+<div class="page">
+  <h1>Smart Lights</h1>
+
+  <div class="grid">
+    <div class="card" *ngFor="let light of lights">
+      <div class="card-header">
+        <h2>{{ light.name }}</h2>
+        <span class="badge" [ngClass]="light.active ? 'badge-on' : 'badge-off'">
+          {{ light.active ? 'ON' : 'OFF' }}
+        </span>
+      </div>
+
+      <p><small>ID: {{ light.id }}</small></p>
+
+      <p>
+        <strong>Paused:</strong>
+        <span [class.paused]="light.paused" [class.running]="!light.paused">
+          {{ light.paused ? 'YES' : 'NO' }}
+        </span>
+      </p>
+
+      <div class="actions">
+        <button (click)="toggleLight(light.id)" class="primary-btn">Toggle</button>
+        <button (click)="pauseLight(light.id)" [disabled]="light.paused" class="secondary-btn">Pause</button>
+        <button (click)="resumeLight(light.id)" [disabled]="!light.paused" class="secondary-btn">Resume</button>
+      </div>
+
+      <div class="links">
+        <a [routerLink]="['/history', light.id]" class="link">History</a>
+        <a [routerLink]="['/schedule', light.id]" class="link">Schedule</a>
+      </div>
+    </div>
+  </div>
+</div>

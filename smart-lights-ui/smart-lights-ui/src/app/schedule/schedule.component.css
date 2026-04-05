@@ -1,0 +1,136 @@
+/* Modernized schedule page styling */
+
+.page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 24px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+input[type="number"],
+input[type="time"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.full-width {
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    margin-top: 16px;
+}
+
+.primary-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3;
+}
+
+.danger-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.danger-btn.small {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 24px 0;
+}
+
+/* segmented control */
+.segmented {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.segment {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.segment input {
+    margin-right: 6px;
+}
+
+/* existing rules list */
+.rule-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.rule-info {
+    flex: 1;
+}
+
+.rrule-text {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.muted {
+    color: #777;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: #007bff;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,33 @@
+<div class="page">
+
+<h1>History - {{deviceId}}</h1>
+
+<table>
+
+<thead>
+<tr>
+<th>Event</th>
+<th>State</th>
+<th>Duration</th>
+<th>Timestamp</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr *ngFor="let h of history">
+
+<td>{{h.event}}</td>
+<td>{{h.state}}</td>
+<td>{{h.durationSeconds}}</td>
+<td>{{h.timestamp}}</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<a routerLink="/devices">← Back</a>
+
+</div>
